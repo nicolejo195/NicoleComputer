@@ -1,1 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Check Prime Number</title>
+<script>
+    function checkPrime() {
 
+        // This code is to check if a number N is a prime number
+        const N = Number(document.getElementById('Prime').value);
+
+         // Remeber is prime number is a number has only factors of 1 and itself
+
+         // First, we assume N is a prime number
+         let isPrime = true;
+
+         // Loop from 2 to N - 1
+         for (let i = 2; i < ; i += 1) {
+             // if any number between 2 and N - 1 is a factor of N,
+             // then N is not a prime number
+             if (N % i === 0) {
+                 isPrime = false;
+             }
+         }
+
+         // print the results
+         if (isPrime) {
+            document.getElementById('Result').innerHTML = N.toString() + ' is a prime number';
+         } else {
+             document.getElementById('Result').innerHTML = N.toString() + ' is not a prime number';
+         }
+
+    }
+</script>
+</head>
+
+<body>
+    <label for="Prime">Enter a num ber:</label>
+    <textarea id="Prime" name="Prime">23</textarea>
+
+    <div>
+        <button onclick="checkPrime()">Check Prime Number </button>
+    </div>
+
+    <label id="Result"></label>
+</body>
+
+</html>
